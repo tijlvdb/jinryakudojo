@@ -1,0 +1,43 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{{ '/static/style.css'|url }}">
+<title>{% block title %}Welcome{% endblock %} — Jinryaku Dojo</title>
+<body>
+  <header>
+    <h1>Jinryaku Dojo</h1>
+    <nav>
+      <ul class="nav navbar-nav">
+        <li{% if this._path == '/' %} class="active"{% endif
+          %}><a href="{{ '/'|url }}">Welcome</a></li>
+        {% for href, title in [
+          ['/jinryaku-dojo', 'Jinryaku Dojo'],
+          ['/genbukan', 'Genbukan'],
+          ['/training', 'Training'],
+          ['/instructors', 'Instructors'],
+          ['/photos', 'Photos'],
+          ['/links', 'Links'],
+          ['/contact', 'Contact']
+        ] %}
+          <li{% if this.is_child_of(href) %} class="active"{% endif
+            %}><a href="{{ href|url }}">{{ title }}</a></li>
+        {% endfor %}
+      </ul>
+      <ul class="nav navbar-nav">
+        {% for href, title in [
+          ['/genbukan', 'Grandmaster']
+        ] %}
+        {% if this.is_child_of(href) %}
+          <li><a class="sublink" href="{{ '/genbukan/systems'|url }}">Systems</a></li>
+          <li><a class="sublink" href="{{ '/genbukan/tanemura-shoto-sensei'|url }}">Grandmaster</a></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+  <div class="page">
+    {% block body %}{% endblock %}
+  </div>
+  <footer>
+    &copy; Copyright by Tanemura Shoto Sensei &amp; Jinryaku Dojo Belgium. All rights reserved.
+  </footer>
+</body>

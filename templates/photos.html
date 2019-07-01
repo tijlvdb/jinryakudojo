@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}Photos{% endblock %}
+{% block body %}
+  <h1>Photos</h1>
+  <div class="photos">
+  {% for photo in this.children %}
+    <div class="photo">
+      {% set image = photo.attachments.images.first() %}
+      {% if image %}
+        <img src="{{ image.thumbnail(320)|url }}" alt="">
+      {% endif %}
+      <h2><a href="{{ photo|url }}">{{ photo.name }}</a>
+        <em>({{ photo.date.year }})</em></h2>
+      <p><strong>{{ photo.type }}</strong></p>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}
