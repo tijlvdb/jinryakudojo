@@ -4,7 +4,11 @@
 <title>{% block title %}Welcome{% endblock %} — Jinryaku Dojo</title>
 <body>
   <header>
-    <h1>Jinryaku Dojo</h1>
+    <div class="headlogo">
+      <img src="{{ '/static/lheader.jpg'|url }}" class="logoleft">
+      <h1 class="centerh">Jinryaku Dojo</h1>
+      <img src="{{ '/static/rheader.jpg'|url }}" class="logoright">
+    </div>
     <nav>
       <ul class="nav navbar-nav">
         <li{% if this._path == '/' %} class="active"{% endif
@@ -12,7 +16,9 @@
         {% for href, title in [
           ['/jinryaku-dojo', 'Jinryaku Dojo'],
           ['/genbukan', 'Genbukan'],
+          ['/systems', 'Systems'],
           ['/training', 'Training'],
+          ['/tanemura-shoto-sensei', 'Grandmaster'],
           ['/instructors', 'Instructors'],
           ['/photos', 'Photos'],
           ['/links', 'Links'],
@@ -24,11 +30,13 @@
       </ul>
       <ul class="nav navbar-nav">
         {% for href, title in [
-          ['/genbukan', 'Grandmaster']
+          ['/systems', 'Grandmaster']
         ] %}
         {% if this.is_child_of(href) %}
-          <li><a class="sublink" href="{{ '/genbukan/systems'|url }}">Systems</a></li>
-          <li><a class="sublink" href="{{ '/genbukan/tanemura-shoto-sensei'|url }}">Grandmaster</a></li>
+          <li><a class="sublink" href="{{ '/systems/genbukan-ninpo-bugei'|url }}">Genbukan Ninpo Bugei</a></li>
+          <li><a class="sublink" href="{{ '/systems/kokusai-ju-jutsu-renmei'|url }}">Kokusai Ju Jutsu Renmei</a></li>
+          <li><a class="sublink" href="{{ '/systems/goshin-jutsu'|url }}">Goshin Jutsu</a></li>
+          <li><a class="sublink" href="{{ '/systems/amatsu-tatara'|url }}">Amatsu Tatara</a></li>
         {% endif %}
         {% endfor %}
       </ul>
@@ -38,6 +46,8 @@
     {% block body %}{% endblock %}
   </div>
   <footer>
-    &copy; Copyright by Tanemura Shoto Sensei &amp; Jinryaku Dojo Belgium. All rights reserved.
+    <div class="centerf">
+      &copy; Copyright by Tanemura Shoto Sensei &amp; Jinryaku Dojo Belgium. All rights reserved.
+    </div>
   </footer>
 </body>

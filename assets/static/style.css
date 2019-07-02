@@ -1,7 +1,7 @@
 body {
     font-family: 'Verdana', sans-serif;
     margin: 50px 25px;
-		background: #000000;
+		background: #CA1107;
 		color: #ffffff;
 }
 
@@ -14,20 +14,23 @@ a:hover {
 }
 
 header, footer, div.page {
-    width: 760px;
+    width: 85%;
     margin: 0 auto;
-    background: #f00003;
+    background: #000000;
     padding: 20px 30px;
+		color: #aaaaaa;
 }
 
 header h1 {
-    color: #fffbbd;
+    color: #FF591F;
     margin: 0;
     font-weight: normal;
     font-size: 42px;
 }
 
 header nav ul {
+		position: relative;
+		left: 7%;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -41,7 +44,7 @@ header nav ul li {
 
 div.page {
     background: #f5d142;
-		color: #000000;
+		color: #111111;
 }
 
 .sublink{
@@ -49,4 +52,31 @@ div.page {
 		margin: 0 8px 0 0;
 		padding: 0;
 		color: #ffff00;
+}
+
+.logoleft{
+		position: absolute;
+		left: 1%;
+		margin-right: 2%;
+		top: 2%;
+
+}
+.logoright{
+		position: absolute;
+		right: 1%;
+		margin-left: 2%;
+		top: 2%;
+}
+.centerh{
+		position: absolute;
+		left: 38%;
+		top: 20%;
+}
+.centerf{
+		position: relative;
+		margin-left: 15%;
+}
+.headlogo{
+		position: relative;
+		height: 100px;
 }
